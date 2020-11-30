@@ -9,7 +9,10 @@
 
 <body>
     <!-- video 不支持 IE8及以下版本浏览器，支持三种视频格式：MP4，WebM 和 Ogg -->
-    <video src="test.mp4" controls width="400" height="300"></video>
+    <!-- <video src="test.mp4" controls autoplay width="400" height="300"></video> -->
+
+    <!-- 禁止下载 -->
+    <video src="test.mp4" controls controlslist="nodownload" width="400" height="300"></video>
 </body>
 
 </html>
