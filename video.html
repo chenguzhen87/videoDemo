@@ -71,10 +71,16 @@
     </script> -->
 
     <video src="test.mp4" controls width="400" height="300" id="video"></video>
+    <canvas id="myCanvas" width="500" height="300" style="border:1px solid #d3d3d3;background:#ffffff;">
+        Your browser does not support the HTML5 canvas tag.
+    </canvas>
 
     <script>
-        var video = document.getElementById('video')
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
 
+
+        var video = document.getElementById('video')
         // 1、loadstart：视频查找。当浏览器开始寻找指定的音频/视频时触发，也就是当加载过程开始时
         video.addEventListener('loadstart', function (e) {
             console.log('提示视频的元数据已加载')
@@ -158,6 +164,7 @@
         // 14、timeupdate：目前的播放位置已更改时，播放时间更新
         video.addEventListener('timeupdate', function (e) {
             console.log('timeupdate')
+            ctx.drawImage(video, 0, 0, 400, 300);
             console.log(e)
         })
 
